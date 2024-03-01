@@ -1,0 +1,17 @@
+os: linux
+dist: focal
+
+language: node_js
+node_js: lts/*
+
+# Skipping install phase since no dependencies added to the package
+install: skip
+
+script: sleep 10
+
+deploy:
+  provider: npm
+  api_token: $NPM_API_TOKEN
+  on:
+    all_branches: true
+  edge: true
